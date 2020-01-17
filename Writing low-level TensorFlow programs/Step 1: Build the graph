@@ -1,0 +1,4 @@
+a = tf.constant([5.0, 3.0, 8.0])
+b = tf.constant([3.0, -1.0, 2.0])
+c = tf.add(a, b)
+print(c)
