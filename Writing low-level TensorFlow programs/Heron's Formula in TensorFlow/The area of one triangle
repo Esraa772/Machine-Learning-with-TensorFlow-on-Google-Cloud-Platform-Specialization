@@ -1,0 +1,17 @@
+def compute_area(sides):
+  #TODO: Write TensorFlow code to compute area of a triangle
+  #  given its side lengths
+  #slice the input 
+  sides= tf.reshape(sides,(3,1)) # change the tuple arrange to be 3 rows and 1 column
+  a= sides[0, :] # first row  and all columns which will be the first element 
+  b= sides[1, :]
+  c= sides[2, :]
+  #haron's formula 
+  s=(a+b+c)*0.5
+  area= s*(s-a)*(s-b)*(s-c)
+  return tf.sqrt(area)
+
+with tf.Session() as sess:
+  area = compute_area(tf.constant([5.0, 3.0, 7.1]))
+  result = sess.run(area)
+  print(result)
