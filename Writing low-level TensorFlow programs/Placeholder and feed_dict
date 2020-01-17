@@ -1,0 +1,7 @@
+with tf.Session() as sess:
+  #TODO: Rather than feeding the side values as a constant, 
+  #  use a placeholder and fill it using feed_dict instead.
+  sides=tf.placeholder(tf.float32, shape=(None,3))
+  area = compute_area(sides)
+  result = sess.run(area,feed_dict={sides: [[5.0, 3.0, 7.1],[2.3,4.1,4.8]]})
+  print(result)
